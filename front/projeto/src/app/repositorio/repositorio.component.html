@@ -16,27 +16,27 @@
       <div class="row full-height justify-content-center">
         <div class="col-12 text-center align-self-center py-5">
           <div class="section pb-5 pt-5 pt-sm-2 text-center">
-            <!-- <h6 class="mb-0 pb-3"><span>Cadastrar</span><span>Log In</span></h6>
-            <input
-              class="checkbox"
-              type="checkbox"
-              id="reg-log"
-              name="reg-log"
-            /> -->
             <label for="reg-log"></label>
             <div class="card-3d-wrap mx-auto">
               <div class="card-3d-wrapper">
                 <div class="card-front">
                   <div class="center-wrap">
                     <div class="section text-center">
-                      <h4 class="mb-4 pb-3">Veja as Informações</h4>
+                      <h4 class="mb-2 pb-3">Informações do Usuário</h4>
+                      <div class="col-md-12">
+                        <img
+                          class="rounded-circle"
+                          height="45px"
+                          width="45px"
+                          src="{{ user.avatar_url }}"
+                          alt=""
+                        />
+                      </div>
                       <label for="">Nome Usuário</label>
                       <div class="form-group">
-
-                        <div >
-
+                        <div>
                           <input
-                          [(ngModel)]="user.login"
+                            [(ngModel)]="user.login"
                             type="text"
                             name="nome"
                             class="form-style"
@@ -51,9 +51,9 @@
                       </div>
                       <label class="mt-2" for="">Número Repositórios</label>
                       <div class="form-group">
-                        <div >
+                        <div>
                           <input
-                          [(ngModel)]="user.public_repos"
+                            [(ngModel)]="user.public_repos"
                             type="text"
                             name="nome"
                             class="form-style"
@@ -66,35 +66,46 @@
                           ></i>
                         </div>
                       </div>
-                      <div class="form-group mt-2">
-                        <!-- <input
-
-                          type="password"
-                          name="senhaLogin"
-                          class="form-style"
-                          placeholder="Sua Senha"
-                          id="logpass"
-                          autocomplete="off"
-                        />
-                        <i class="fa fa-lock input-icon uil uil-lock-alt"></i> -->
-                        <!-- <button
-                          type="submit"
-                          class="btn mt-4"
-                          (click)="pesquisarUsuario(user.nome)"
-                        >
-                          Pesquisar
-                        </button> -->
+                      <label class="mt-2" for=""
+                        >Número Repositórios com Estrela</label
+                      >
+                      <div class="form-group">
+                        <div>
+                          <input
+                            [(ngModel)]="listaRepositoriosEstrela.length"
+                            type="text"
+                            name="nome"
+                            class="form-style"
+                            id="nomeUsuario"
+                            autocomplete="off"
+                          />
+                          <i
+                            class="fa fa-star input-icon uil uil-at"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
                       </div>
-
-                      <!-- <p class="mb-0 mt-4 text-center">
-                        <a href="#0" class="link">Esqueceu sua senha?</a>
-                      </p> -->
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <table class="table table-striped mt-4 text-light">
+            <thead>
+              <tr>
+                <th scope="col">Nome Repositorio</th>
+                <th scope="col">Número de Estrelas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listaRepositorios">
+                <th>{{ item.name }}</th>
+                <th>{{ item.stargazers_count }}</th>
+                <td class="d-flex justify-content-center"></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

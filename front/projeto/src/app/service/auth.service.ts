@@ -9,7 +9,7 @@ import { UserRetorno } from '../model/UserRetorno';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  exibir(usuario: String): Observable<UserRetorno>{
+  exibirUsuario(usuario: String): Observable<UserRetorno>{
     return this.http.get<UserRetorno>(
       `https://api.github.com/users/${usuario}`
     );

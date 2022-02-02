@@ -27,7 +27,7 @@ export class InicioComponent implements OnInit {
   pesquisarUsuario(usuario: string) {
     /* console.log(this.user.login) */
 
-    this.authService.exibir(usuario).subscribe((resp: UserRetorno) => {
+    this.authService.exibirUsuario(usuario).subscribe((resp: UserRetorno) => {
       this.user = resp;
       /* this.user = new UserRetorno; */
       environment.nome = this.user.login

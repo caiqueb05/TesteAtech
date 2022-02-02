@@ -1,5 +1,4 @@
 export class Repositorio{
   public name: string
-
-  /* public token: string */
+  public stargazers_count: number
 }
