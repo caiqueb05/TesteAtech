@@ -21,19 +21,14 @@ export class InicioComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
-    /* this.pesquisarUsuario("caiqueb05"); */
   }
 
   pesquisarUsuario(usuario: string) {
-    /* console.log(this.user.login) */
 
     this.authService.exibirUsuario(usuario).subscribe((resp: UserRetorno) => {
       this.user = resp;
-      /* this.user = new UserRetorno; */
       environment.nome = this.user.login
       console.log(this.user)
-      /* console.log(resp) */
-      /* this.router.navigate(['/repositorio']); */
       this.router.navigate([`/repositorio/${environment.nome}`]);
     });
   }
