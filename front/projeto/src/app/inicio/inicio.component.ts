@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../model/User';
+import { environment } from 'src/environments/environment.prod';
+import { UserRetorno } from '../model/UserRetorno';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
-  user: User = new User();
-  usuario: string;
+  user: UserRetorno = new UserRetorno();
+  listaUsuarios: UserRetorno[]
 
   constructor(
     private router: Router,
@@ -20,11 +21,20 @@ export class InicioComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0);
+    /* this.pesquisarUsuario("caiqueb05"); */
   }
 
-  pesquisarUsuario() {
-    this.authService.exibir(this.usuario).subscribe((resp: User) => {
+  pesquisarUsuario(usuario: string) {
+    /* console.log(this.user.login) */
+
+    this.authService.exibir(usuario).subscribe((resp: UserRetorno) => {
       this.user = resp;
+      /* this.user = new UserRetorno; */
+      environment.nome = this.user.login
+      console.log(this.user)
+      /* console.log(resp) */
+      /* this.router.navigate(['/repositorio']); */
+      this.router.navigate([`/repositorio/${environment.nome}`]);
     });
   }
 }

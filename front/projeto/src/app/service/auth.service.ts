@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from '../model/User';
 import { Observable } from 'rxjs';
+import { UserRetorno } from '../model/UserRetorno';
 
 @Injectable({
   providedIn: 'root',
@@ -9,9 +9,9 @@ import { Observable } from 'rxjs';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  exibir(usuario: String) {
-    return this.http.get<User>(
-      `https://api.github.com/users/${usuario}/repos?per_page=50`
+  exibir(usuario: String): Observable<UserRetorno>{
+    return this.http.get<UserRetorno>(
+      `https://api.github.com/users/${usuario}`
     );
   }
 }

@@ -6,12 +6,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { RepositorioComponent } from './repositorio/repositorio.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
+    RepositorioComponent,
   ],
   imports: [
     BrowserModule,

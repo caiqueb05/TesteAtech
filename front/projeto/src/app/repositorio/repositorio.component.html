@@ -29,21 +29,42 @@
                 <div class="card-front">
                   <div class="center-wrap">
                     <div class="section text-center">
-                      <h4 class="mb-4 pb-3">Bem vindo!</h4>
+                      <h4 class="mb-4 pb-3">Veja as Informações</h4>
+                      <label for="">Nome Usuário</label>
                       <div class="form-group">
-                        <input
+
+                        <div >
+
+                          <input
                           [(ngModel)]="user.login"
-                          type="text"
-                          name="nome"
-                          class="form-style"
-                          placeholder="Digite o Nome do Usuário do Github"
-                          id="nomeUsuario"
-                          autocomplete="off"
-                        />
-                        <i
-                          class="fa fa-at input-icon uil uil-at"
-                          aria-hidden="true"
-                        ></i>
+                            type="text"
+                            name="nome"
+                            class="form-style"
+                            id="nomeUsuario"
+                            autocomplete="off"
+                          />
+                          <i
+                            class="fa fa-at input-icon uil uil-at"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
+                      </div>
+                      <label class="mt-2" for="">Número Repositórios</label>
+                      <div class="form-group">
+                        <div >
+                          <input
+                          [(ngModel)]="user.public_repos"
+                            type="text"
+                            name="nome"
+                            class="form-style"
+                            id="nomeUsuario"
+                            autocomplete="off"
+                          />
+                          <i
+                            class="fa fa-list-ol input-icon uil uil-at"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
                       </div>
                       <div class="form-group mt-2">
                         <!-- <input
@@ -56,15 +77,13 @@
                           autocomplete="off"
                         />
                         <i class="fa fa-lock input-icon uil uil-lock-alt"></i> -->
-                        <button
+                        <!-- <button
                           type="submit"
                           class="btn mt-4"
-                          (click)="pesquisarUsuario(user.login)"
+                          (click)="pesquisarUsuario(user.nome)"
                         >
                           Pesquisar
-                        </button>
-                        <div></div>
-
+                        </button> -->
                       </div>
 
                       <!-- <p class="mb-0 mt-4 text-center">
@@ -80,9 +99,4 @@
       </div>
     </div>
   </div>
-
 </body>
-<div *ngFor="let item of listaUsuarios">
-  <h1>[(ngModel)]="login"</h1>
-
-</div>
