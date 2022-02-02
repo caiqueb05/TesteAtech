@@ -13,14 +13,14 @@ public class Exercicio01MatrizBoaz {
             for (int j1 = 0; j1 < a[i1].length; j1++) {
                 int ponto1 = a[i1][j1];
                 if (ponto1 == 0) {
-                    continue;
+                    break;
                 } else {
                     System.out.println("PONTO1 Position: " + i1 + "," + j1 + " | VALUE: " + ponto1);
                     for (int i2 = 0; i2 < a.length; i2++) {
                         for (int j2 = 0; j2 < a[i2].length; j2++) {
                             int ponto2 = a[i2][j2];
                             if (ponto2 == 0) {
-                                continue;
+                                break;
                             } else {
                                 System.out.println(" PONTO2 Position: " + i2 + "," + j2 + " | VALUE: " + ponto2);
                                 if ((i1 - i2) == (j1 - j2)) {
